@@ -23,7 +23,9 @@ export const App: React.FC = () => {
           }}
         />
       </section>
-      <section className={styles.articleSection}></section>
+      <section className={styles.articleSection}>
+        {!tasks.length && <p className={styles.articl}>There is no live here</p>}
+      </section>
     </article>
   );
 };
