@@ -1,0 +1,59 @@
+.inputStyles{
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    margin-block: 20px;
+    background-color: hsl(208, 100%, 97%, 0.4);
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.label{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 12px 15px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.inputTaskCheckbox{
+    width: 20px;
+    height: 20px;
+}
+
+.taskTitel{
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.2;
+    font-size: 25px;
+    background-color: rgb(78, 135, 185, .3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.destroed{
+    background-color: transparent;
+    border: 1px solid #00b4d8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.button{
+    background-color: transparent;
+    border: 1px solid #00b4d8;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
