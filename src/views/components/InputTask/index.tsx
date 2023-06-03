@@ -42,6 +42,12 @@ export const InputTask: React.FC<InputTaskProps> = ({
             onChange={(evt) => {
               setValue(evt.target.value);
             }}
+            onKeyDown={(evt) => {
+              if (evt.key === "Enter") {
+                onEdited(id, value);
+                setIsEditMode(false);
+              }
+            }}
             className={styles.titelEdit}
           />
         ) : (
