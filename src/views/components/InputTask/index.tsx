@@ -18,12 +18,15 @@ export const InputTask: React.FC<InputTaskProps> = ({
   onRemoved,
 }) => {
   const [checked, setChecked] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [value, setValue] = useState(title);
 
   return (
     <div className={styles.inputStyles}>
       <label className={styles.label}>
         <input
           type="checkbox"
+          disabled={isEditMode}
           checked={checked}
           className={styles.inputTaskCheckbox}
           onChange={(evt) => {
@@ -33,11 +36,38 @@ export const InputTask: React.FC<InputTaskProps> = ({
             }
           }}
         />
-        <h3 className={styles.taskTitel}>{title}</h3>
+        {isEditMode ? (
+          <input
+            value={value}
+            onChange={(evt) => {
+              setValue(evt.target.value);
+            }}
+            className={styles.titelEdit}
+          />
+        ) : (
+          <h3 className={styles.taskTitel}>{title}</h3>
+        )}
       </label>
-      <button className={styles.button} onClick={() => {}}>
-        Edit
-      </button>
+      {isEditMode ? (
+        <button
+          className={styles.button}
+          onClick={() => {
+            onEdited(id, value);
+            setIsEditMode(false);
+          }}
+        >
+          save
+        </button>
+      ) : (
+        <button
+          className={styles.button}
+          onClick={() => {
+            setIsEditMode(true);
+          }}
+        >
+          Edit
+        </button>
+      )}
       <button
         className={styles.destroed}
         onClick={() => {
